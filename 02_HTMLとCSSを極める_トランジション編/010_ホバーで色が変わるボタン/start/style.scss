@@ -1,0 +1,33 @@
+// scssにすると変数を指定できる
+
+$cWhite: white;
+$cBlack: black;
+
+#container {
+  text-align: center;
+}
+
+.btn {
+  background-color: $cWhite;
+  color: $cBlack;
+  border: 2px solid $cBlack;
+  padding: 10px 20px;
+  margin: 50px 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  //ネストの書き方ができる
+  &:hover {
+    background-color: $cBlack;
+    color: $cWhite;
+  }
+
+  &-cube{
+    background-color: $cBlack;
+
+    & .inner{
+      color: $cWhite;
+    }
+  }
+}

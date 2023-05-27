@@ -1,0 +1,19 @@
+.parent {
+  color: blue;
+
+  //複数クラスで指定した方がcssの詳細度が上がる
+  & > .element {
+    color: purple;
+
+    &.second-child {
+      //クラス名はelement second-childなので>はいらない
+      //半角スペースを入れるとelmentの子要素のsecond-childと判定される
+      //半角スペースを入れないと複数のクラス名が入った要素と判定される
+      color: black;
+    }
+  }
+}
+
+.element {
+  color: red;
+}
