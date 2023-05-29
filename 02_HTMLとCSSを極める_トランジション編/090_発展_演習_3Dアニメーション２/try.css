@@ -13,6 +13,42 @@
   margin: 0 auto;
   cursor: pointer;
 }
+
 .try .btn.cubic {
   /** スタイルをここに追加。*/
-}/*# sourceMappingURL=try.css.map */
+}
+
+.try .btn.cubic .hovering {
+  background-color: black;
+  color: white;
+  transform: rotateX(90deg);
+  transform-origin: center center -25px;
+}
+
+.try .btn.cubic span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  line-height: 48px;
+  text-align: center;
+  transition: all 0.3s;
+  transform-origin: center center -25px;
+}
+
+.try .btn.cubic .default {
+  background-color: white;
+  color: black;
+  border: solid 1px black;
+  transform: rotateX(0);
+}
+
+.try .btn.cubic:hover .hovering {
+  transform: rotateX(0);
+}
+
+.try .btn.cubic:hover .default {
+  transform: rotateX(-90deg);
+}
