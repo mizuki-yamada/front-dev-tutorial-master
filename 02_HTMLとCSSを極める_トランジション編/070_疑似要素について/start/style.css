@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #container {
   text-align: center;
 }
@@ -12,12 +13,19 @@
   cursor: pointer;
   transition: all 0.3s;
 }
+
+.btn:hover {
+  background-・color: black;
+  color: white;
+}
+
 .btn.slide-bg {
   position: relative;
   overflow: hidden;
-  z-index: 1;
 }
-.btn.slide-bg span {
+
+.btn.slide-bg::before {
+  content: '';
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -27,11 +35,14 @@
   left: 0;
   transform: translateX(-100%);
   transition: transform 0.3s;
-  z-index: -1;
 }
+
 .btn.slide-bg:hover {
   color: white;
+  z-index: 1;
 }
-.btn.slide-bg:hover span {
+
+.btn.slide-bg:hover::before {
   transform: none;
-}/*# sourceMappingURL=style.css.map */
+  z-index: -1;
+}
