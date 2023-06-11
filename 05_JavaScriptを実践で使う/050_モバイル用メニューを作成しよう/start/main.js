@@ -2,6 +2,7 @@ class MobileMenu {
   constructor() {
     this.DOM = {};
     this.DOM.btn = document.querySelector(".mobile-menu_btn");
+    this.DOM.cover = document.querySelector(".mobile-menu_cover");
     this.DOM.container = document.querySelector("#global-container");
     this.eventType = this._getEventType();
     this._addEvent();
@@ -22,7 +23,10 @@ class MobileMenu {
   _addEvent() {
     this.DOM.btn.addEventListener("click", () => {
       this._toggle();
-      //bindの代わりにアロー関数でも動作することを確認
+    });
+
+    this.DOM.cover.addEventListener("click", () => {
+      this._toggle();
     });
   }
 }
